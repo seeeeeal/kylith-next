@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --color-kui-default: #1f2937;
+  --color-kui-primary: #3b82f6;
+
+  --color-kui-success: #10b981;
+  --color-kui-success-light: #d1fae5;
+  --color-kui-success-dark: #047857;
+
+  --color-kui-error: #ef4444;
+  --color-kui-error-light: #fee2e2;
+  --color-kui-error-dark: #991b1b;
+
+  --color-kui-warning: #f59e0b;
+  --color-kui-warning-light: #fef3c7;
+  --color-kui-warning-dark: #b45309;
+
+  --color-kui-info: #3b82f6;
+  --color-kui-info-light: #dbeafe;
+  --color-kui-info-dark: #1e40af;
+
+  --color-kui-border: #d1d5db;
+  --color-kui-base: #f3f4f6;
+
+  --text-xxs: clamp(10px, 0.7vw, 12px);
+}
+
+body {
+  font-size: clamp(14px, 1.2vw, 18px);
+}
