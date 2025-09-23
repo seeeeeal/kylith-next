@@ -3,5 +3,19 @@
     "keyboards": "KEYBOARD",
     "accessories": "ACCESSORIES",
     "support": "SUPPORT"
+  },
+  "footer": {
+    "description": "Kylith is a next-generation keyboard brand that combines style and performance.",
+    "copyright": "© 2025 Kylith. All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "contact": "Contact",
+    "about": "About",
+    "brandStory": "Brand Story",
+    "employment": "Employment",
+    "support": "Support",
+    "shipping": "Shipping & Returns",
+    "faq": "FAQ",
+    "switchGuide": "Switch Guide"
   }
 }

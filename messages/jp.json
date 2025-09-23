@@ -3,5 +3,19 @@
     "keyboards": "キーボード",
     "accessories": "アクセサリー",
     "support": "サポート"
+  },
+  "footer": {
+    "description": "Kylithは、美しさと性能を両立する次世代キーボードブランド。",
+    "copyright": "© 2025 Kylith. All rights reserved.",
+    "privacyPolicy": "プライバシーポリシー",
+    "termsOfService": "利用規約",
+    "contact": "お問い合わせ",
+    "about": "会社概要",
+    "brandStory": "ブランドストーリー",
+    "employment": "採用情報",
+    "support": "サポート",
+    "shipping": "配送・返品について",
+    "faq": "よくある質問",
+    "switchGuide": "スイッチガイド"
   }
 }
