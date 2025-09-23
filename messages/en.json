@@ -17,5 +17,69 @@
     "shipping": "Shipping & Returns",
     "faq": "FAQ",
     "switchGuide": "Switch Guide"
+  },
+  "landing": {
+    "hero": {
+      "title": "Where performance meets style.",
+      "subtitle": "Kylith is a next-generation keyboard brand that combines style and performance.",
+      "cta": "Shop Now"
+    },
+    "products": "Products",
+    "reviews": "Reviews",
+    "reviewsList": [
+      {
+        "author": "John Doe",
+        "job": "Software Engineer",
+        "title": "Great Keyboard for Work and Play",
+        "content": "I've been using this keyboard for both work and gaming, and it's been a great experience. The typing feels natural, and the responsiveness is excellent. The RGB lighting is also a nice touch.",
+        "rating": 5
+      },
+      {
+        "author": "John Doe",
+        "job": "Software Engineer",
+        "title": "Great Keyboard for Work and Play",
+        "content": "I've been using this keyboard for both work and gaming, and it's been a great experience. The typing feels natural, and the responsiveness is excellent. The RGB lighting is also a nice touch.",
+        "rating": 5
+      },
+      {
+        "author": "John Doe",
+        "job": "Software Engineer",
+        "title": "Great Keyboard for Work and Play",
+        "content": "I've been using this keyboard for both work and gaming, and it's been a great experience. The typing feels natural, and the responsiveness is excellent. The RGB lighting is also a nice touch.",
+        "rating": 5
+      }
+    ],
+    "features": "Features",
+    "featuresList": [
+      {
+        "image": "/Q1-Max-2.webp",
+        "title": "Comfortable Typing",
+        "description": "A balanced typing feel with firm resistance and quiet operation."
+      },
+      {
+        "image": "/Q1-Max-3.webp",
+        "title": "Style and Functionality",
+        "description": "The cold aluminum and matte PBT keycaps add a touch of elegance and comfort."
+      },
+      {
+        "image": "/Q1-Max-4.webp",
+        "title": "All Devices Compatible",
+        "description": "Compatible with all devices, including Mac, Windows, Linux, and iOS."
+      },
+      {
+        "image": "/Q1-Max-6.webp",
+        "title": "5-Year Warranty",
+        "description": "We provide peace of mind for long-term use with a 5-year warranty."
+      }
+    ],
+    "details": "Details",
+    "newsletter": {
+      "title": "Get the perfect Kylith, just for you.",
+      "subtitle": "We'll send you the latest news and updates. You can unsubscribe anytime. Please see our <a>Privacy Policy</a> for more information.",
+      "placeholder": "Enter your email address"
+    }
+  },
+  "price": {
+    "taxIncluded": "Tax Included"
   }
 }

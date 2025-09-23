@@ -7,7 +7,7 @@ import {
   FaYoutube,
   FaLine,
 } from "react-icons/fa6";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 const SOCIAL_MEDIA_LINKS = [
   {
