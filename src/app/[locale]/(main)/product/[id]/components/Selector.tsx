@@ -39,8 +39,8 @@ export default function Selector({
               "relative cursor-pointer rounded-lg flex flex-col p-2 duration-200",
               item.image && "min-w-[6em] max-w-[10em]",
               selected === item.value
-                ? "font-semibold text-kui-default ring-2 ring-kui-primary bg-kui-base"
-                : "text-kui-secondary hover:bg-kui-base/50 ring-transparent hover:ring-1 hover:ring-kui-primary hover:text-kylith"
+                ? "font-semibold ring-2 ring-kui-primary bg-muted"
+                : "text-muted-foreground hover:bg-muted ring-transparent hover:ring-1 hover:ring-kui-primary hover:text-kylith"
             )}
             role="button"
             tabIndex={0}
@@ -61,7 +61,7 @@ export default function Selector({
 
       {/* Render the description of the currently selected item using ReactMarkdown, if available. */}
       {items.find((item) => item.value === selected)?.desc && (
-        <div className="mt-4 text-xs text-gray-500 leading-relaxed [&_a]:text-kui-primary">
+        <div className="mt-4 text-xs text-muted-foreground leading-relaxed [&_a]:text-kui-primary">
           <ReactMarkdown>{selectedItem!.desc!}</ReactMarkdown>
 
           {/* Render tags if available(mainly for switch options). */}
@@ -72,7 +72,7 @@ export default function Selector({
                 color="default"
                 size="xsmall"
                 variant="soft"
-                className="text-kui-secondary/70"
+                className="text-muted-foreground"
               >
                 {tag}
               </KuiTag>

@@ -66,6 +66,12 @@
 
   --color-destructive: var(--destructive);
 
+  --color-success: var(--success);
+
+  --color-error: var(--error);
+
+  --color-warning: var(--warning);
+
   --color-accent-foreground: var(--accent-foreground);
 
   --color-accent: var(--accent);
@@ -100,9 +106,11 @@
 }
 
 body {
-  font-size: clamp(14px, 1.2vw, 16px);
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
+/* TODO: check en font family */
 :lang(en) {
   font-family: "Poppins", "ui-sans-serif", "system-ui", sans-serif;
 }
@@ -128,6 +136,9 @@ body {
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
+  --success: oklch(0.6 0.118 184.704);
+  --error: oklch(0.577 0.245 27.325);
+  --warning: oklch(0.828 0.189 84.429);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
@@ -149,7 +160,7 @@ body {
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
+  --card: oklch(20% 0.004 247);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
@@ -162,6 +173,9 @@ body {
   --accent: oklch(0.269 0 0);
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
+  --success: oklch(0.696 0.17 162.48);
+  --error: oklch(0.704 0.191 22.216);
+  --warning: oklch(0.769 0.188 70.08);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);

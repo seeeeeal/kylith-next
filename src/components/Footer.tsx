@@ -40,12 +40,12 @@ export default function Footer() {
   const t = useTranslations("footer");
 
   return (
-    <footer className="bg-kui-base pt-6 pb-24 relative overflow-hidden">
+    <footer className="bg-muted pt-6 pb-24 relative overflow-hidden">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex flex-col md:flex-row justify-between items-start gap-8">
           <div>
             <div className="text-xl font-bold mb-1">Kylith</div>
-            <p className="text-xxs text-kui-default/50 leading-relaxed">
+            <p className="text-xxs text-muted-foreground leading-relaxed">
               {t("description")}
               <br />
               Where performance meets style.
@@ -59,9 +59,9 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="flex gap-16 text-xs text-kui-default/50">
+          <div className="flex gap-16 text-xs text-muted-foreground">
             <div className="flex flex-col gap-2">
-              <div className="text-kui-default font-semibold">Kylith</div>
+              <div className="text-primary font-semibold">Kylith</div>
               <a href="#" className="hover:underline">
                 {t("about")}
               </a>
@@ -79,9 +79,7 @@ export default function Footer() {
               </a>
             </div>
             <div className="flex flex-col gap-2">
-              <div className="text-kui-default font-semibold">
-                {t("support")}
-              </div>
+              <div className="text-primary font-semibold">{t("support")}</div>
               <a href="#" className="hover:underline">
                 {t("switchGuide")}
               </a>
@@ -98,10 +96,10 @@ export default function Footer() {
           </div>
         </div>
 
-        <hr className="my-4 border-kui-default/5" />
+        <hr className="my-4 border-border" />
 
         <div className="flex justify-between items-center">
-          <p className="text-xxs text-kui-default/50">
+          <p className="text-xxs text-muted-foreground">
             &copy; {new Date().getFullYear()} Kylith. All rights reserved.
           </p>
         </div>

@@ -23,7 +23,7 @@ export default function Nav({ className }: Props) {
   const t = useTranslations("nav");
 
   return (
-    <header className={clsx("bg-white border-b border-kui-border", className)}>
+    <header className={clsx("bg-background border-b border-border", className)}>
       <div className="flex justify-between items-center w-full max-w-screen-xl mx-auto px-6 py-4">
         <div className="flex items-center gap-12">
           <Link href={"/"}>
@@ -52,7 +52,7 @@ export default function Nav({ className }: Props) {
         </div>
 
         <div className="flex items-center gap-4 text-xs">
-          <div className=" bg-kui-base border border-2 border-transparent hover:border-kui-primary transition-colors flex justify-end items-center rounded h-6 px-2 w-20 sm:w-36 cursor-pointer">
+          <div className="bg-input border border-2 border-transparent hover:border-kui-primary transition-colors flex justify-end items-center rounded h-6 px-2 w-20 sm:w-36 cursor-pointer">
             <FiSearch />
             {/* TODO: Search modal */}
           </div>

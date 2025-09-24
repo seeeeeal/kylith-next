@@ -32,15 +32,13 @@ const sizeClassMap = {
 function PriceTag({ amount, size = "medium", taxIncluded = true }: PriceProps) {
   const t = useTranslations("price");
   return (
-    <div className="flex gap-1 items-baseline text-kui-secondary">
+    <div className="flex gap-1 items-baseline text-muted-foreground">
       <span className={sizeClassMap[size].currency}>¥</span>
-      <span className={clsx("text-kui-default", sizeClassMap[size].amount)}>
+      <span className={clsx("text-foreground", sizeClassMap[size].amount)}>
         {amount.toLocaleString()}
       </span>
       {taxIncluded && (
-        <span
-          className={clsx(sizeClassMap[size].taxIncluded, "text-kui-secondary")}
-        >
+        <span className={sizeClassMap[size].taxIncluded}>
           ({t("taxIncluded")})
         </span>
       )}

@@ -15,7 +15,7 @@ export default function Products() {
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         {products.slice(0, 4).map((product) => (
-          <div key={product.id} className="rounded-lg p-4 bg-kui-base">
+          <div key={product.id} className="rounded-lg p-4 bg-muted">
             <img
               src={product.image}
               alt={product.name}

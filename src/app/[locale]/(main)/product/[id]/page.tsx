@@ -9,23 +9,26 @@ import {
   FiShoppingCart,
   FiTruck,
 } from "react-icons/fi";
-import {
-  KuiIconButton,
-  KuiButton,
-  KuiTag,
-  KuiBreadcrumbs,
-  KuiInputNumber,
-} from "@/components/kui";
+import { KuiInputNumber } from "@/components/kui";
 import PriceTag from "@/components/PriceTag";
 import ImageGallery from "./components/ImageGallery";
 import Review from "./components/Review";
+import { Button } from "@/components/ui/button";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import { Badge } from "@/components/ui/badge";
+
 // mock data
 import products from "@/lib/products";
 import { reviews } from "@/lib/reviews";
 import Selector from "./components/Selector";
 import switches from "@/lib/switches";
-import { Button } from "@/components/ui/button";
-import clsx from "clsx";
 
 type Product = (typeof products)[number];
 
@@ -79,13 +82,25 @@ function Product() {
   }
   return (
     <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
-      <KuiBreadcrumbs
-        items={[
-          { label: t("nav.home"), path: "/" },
-          { label: t("nav.keyboards"), path: "/keyboards" },
-          { label: product.fullName },
-        ]}
-      />
+      <Breadcrumb>
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild>
+              <Link href="/">{t("nav.home")}</Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild>
+              <Link href="/products">{t("nav.keyboards")}</Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage>{product.fullName}</BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
 
       <div className="mt-4 flex items-center justify-between">
         <h2 className="text-xl sm:text-2xl font-bold">{product.fullName}</h2>
@@ -179,25 +194,15 @@ function Product() {
           <div>
             <div className="mb-4">
               {product.stock > 0 ? (
-                <KuiTag
-                  color="success"
-                  size="small"
-                  variant="soft"
-                  className="rounded-full!"
-                >
+                <Badge variant="soft" color="success" shape="round">
                   <span className="w-2 h-2 bg-kui-success rounded-full"></span>
                   {t("stock.inStock")}
-                </KuiTag>
+                </Badge>
               ) : (
-                <KuiTag
-                  color="error"
-                  size="small"
-                  variant="soft"
-                  className="rounded-full!"
-                >
+                <Badge variant="soft" color="error" shape="round">
                   <span className="w-2 h-2 bg-kui-error rounded-full"></span>
                   {t("stock.outOfStock")}
-                </KuiTag>
+                </Badge>
               )}
             </div>
 
@@ -233,7 +238,7 @@ function Product() {
               {product.description}
             </p>
 
-            <div className="bg-kui-base text-kui-secondary rounded-lg p-4 flex items-center gap-2">
+            <div className="bg-secondary text-secondary-foreground/60 rounded-lg p-4 flex items-center gap-2">
               <FiTruck className="w-4 h-4" />
               <span className="text-xs">
                 10000円以上の注文で日本全国送料無料。

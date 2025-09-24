@@ -1,4 +1,4 @@
-import { KuiButton } from "@/components/kui";
+import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 
 interface Feature {
@@ -18,7 +18,7 @@ export default function Features() {
       </h2>
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         {features.map((feature: Feature, index: number) => (
-          <div key={index} className="bg-kui-base rounded-xl p-4">
+          <div key={index} className="bg-muted rounded-xl p-4">
             <img
               src={feature.image}
               alt="Kylith"
@@ -26,19 +26,13 @@ export default function Features() {
             />
             <div className="">
               <h3 className="text-sm font-semibold mb-2">{feature.title}</h3>
-              <p className="text-gray-600 text-xs leading-relaxed mb-4">
+              <p className="text-muted-foreground text-xs leading-relaxed mb-4">
                 {feature.description}
               </p>
               <a href="#">
-                <KuiButton
-                  variant="filled"
-                  color="default"
-                  size="small"
-                  shape="round"
-                  className="w-full"
-                >
+                <Button color="default" shape="round" className="w-full">
                   {t("details")}
-                </KuiButton>
+                </Button>
               </a>
             </div>
           </div>

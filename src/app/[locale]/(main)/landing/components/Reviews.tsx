@@ -30,7 +30,7 @@ export default function Reviews() {
   const reviews = t.raw("reviewsList") as Review[];
 
   return (
-    <section className="bg-kui-base">
+    <section className="bg-muted">
       <div className="max-w-screen-xl mx-auto p-4 sm:p-8">
         <h2 className="text-xl sm:text-2xl mb-4 sm:mb-8">
           <span className="font-semibold">{t("reviews")}</span>
@@ -63,30 +63,30 @@ export default function Reviews() {
             <SwiperSlide key={review.author}>
               <div
                 key={review.author}
-                className="h-60 bg-white rounded-lg p-4 flex flex-col justify-between gap-4"
+                className="h-60 bg-background rounded-lg p-4 flex flex-col justify-between gap-4"
               >
                 <div>
                   {review.title && (
-                    <div className="mb-1 text-xs font-semibold text-kui-default">
+                    <div className="mb-1 text-xs font-semibold">
                       {review.title}
                     </div>
                   )}
-                  <div className="text-xs text-kui-secondary leading-relaxed">
+                  <div className="text-xs text-muted-foreground leading-relaxed">
                     <ReactMarkdown>{review.content}</ReactMarkdown>
                   </div>
                 </div>
 
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 bg-kui-default/50 rounded-full flex items-center justify-center">
+                    <div className="w-8 h-8 bg-muted-foreground rounded-full flex items-center justify-center">
                       <FiUser className="text-kui-base" />
                     </div>
                     <div className="flex flex-col gap-1">
                       <div className="flex gap-1">
-                        <span className="text-xs font-semibold text-kui-default">
+                        <span className="text-xs font-semibold">
                           {review.author}
                         </span>
-                        <span className="text-xxs text-kui-default/50">
+                        <span className="text-xxs text-muted-foreground">
                           {review.job}
                         </span>
                       </div>
