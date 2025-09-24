@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link } from "@/i18n/navigation";
 import { FiChevronRight } from "react-icons/fi";
 import clsx from "clsx";
 
@@ -22,10 +22,7 @@ export default function KuiBreadcrumbs({
   maxWidth = "max-w-[200px] sm:max-w-[16rem]",
 }: BreadcrumbsProps) {
   return (
-    <nav
-      className={clsx("flex text-xxs text-kui-secondary", className)}
-      aria-label="Breadcrumb"
-    >
+    <nav className={clsx("flex text-xxs text-kui-secondary", className)}>
       <ol className="flex items-center">
         {items.map((item, index) => (
           <li key={index} className="flex items-center">
@@ -36,22 +33,17 @@ export default function KuiBreadcrumbs({
             )}
             {item.path ? (
               <Link
-                to={item.path}
+                href={item.path}
                 className={clsx(
                   "transition duration-200 truncate hover:text-kui-default",
                   maxWidth
                 )}
                 title={item.label}
-                aria-current={index === items.length - 1 ? "page" : undefined}
               >
                 {item.label}
               </Link>
             ) : (
-              <span
-                className={clsx("truncate", maxWidth)}
-                title={item.label}
-                aria-current={index === items.length - 1 ? "page" : "false"}
-              >
+              <span className={clsx("truncate", maxWidth)} title={item.label}>
                 {item.label}
               </span>
             )}

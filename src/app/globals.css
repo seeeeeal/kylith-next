@@ -18,6 +18,7 @@
 
   --color-kui-default: #1f2937;
   --color-kui-primary: #3b82f6;
+  --color-kui-secondary: #6b7280;
 
   --color-kui-success: #10b981;
   --color-kui-success-light: #d1fae5;
@@ -43,4 +44,12 @@
 
 body {
   font-size: clamp(14px, 1.2vw, 16px);
+}
+
+:lang(en) {
+  font-family: "Poppins", "ui-sans-serif", "system-ui", sans-serif;
+}
+
+:lang(ja) {
+  font-family: "Poppins", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
 }

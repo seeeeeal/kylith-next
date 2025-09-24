@@ -34,11 +34,13 @@ function PriceTag({ amount, size = "medium", taxIncluded = true }: PriceProps) {
   return (
     <div className="flex gap-1 items-baseline text-kui-secondary">
       <span className={sizeClassMap[size].currency}>¥</span>
-      <span className={clsx(" text-kui-default", sizeClassMap[size].amount)}>
+      <span className={clsx("text-kui-default", sizeClassMap[size].amount)}>
         {amount.toLocaleString()}
       </span>
       {taxIncluded && (
-        <span className={sizeClassMap[size].taxIncluded}>
+        <span
+          className={clsx(sizeClassMap[size].taxIncluded, "text-kui-secondary")}
+        >
           ({t("taxIncluded")})
         </span>
       )}

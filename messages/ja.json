@@ -1,5 +1,6 @@
 {
   "nav": {
+    "home": "ホーム",
     "keyboards": "キーボード",
     "accessories": "アクセサリー",
     "support": "サポート"
@@ -95,5 +96,47 @@
   },
   "price": {
     "taxIncluded": "税込"
+  },
+  "product": {
+    "addToCart": "カートに追加",
+    "inStock": "在庫あり",
+    "outOfStock": "売切れ",
+    "switch": "スイッチ",
+    "color": "カラー",
+    "layout": "配列",
+    "switchSupport": "スイッチ選びをサポート",
+    "englishLayout": "英語配列",
+    "japaneseLayout": "日本語配列",
+    "black": "黒",
+    "white": "白",
+    "new": "新製品",
+    "gridView": "グリッド表示",
+    "columnView": "カラム表示",
+    "showFilter": "フィルターを表示",
+    "hideFilter": "フィルターを非表示",
+    "filter": "フィルター"
+  },
+  "stock": {
+    "inStock": "在庫あり",
+    "outOfStock": "売切れ",
+    "lowStock": "在庫残りわずか",
+    "available": "利用可能",
+    "unavailable": "利用不可",
+    "limited": "限定"
+  },
+  "cart": {
+    "title": "カート",
+    "selectAll": "全て選択",
+    "removeAll": "全て削除",
+    "itemsInCart": "個の商品がカートに入っています",
+    "subtotal": "小計:",
+    "shipping": "送料:",
+    "total": "合計:",
+    "taxNote": "* 価格には消費税が含まれています",
+    "proceedToCheckout": "レジへ進む",
+    "free": "無料",
+    "addToCart": "カートに追加",
+    "addedToCart": "カートに追加しました！",
+    "continueShopping": "買い物を続ける"
   }
 }

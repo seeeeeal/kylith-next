@@ -1,7 +1,8 @@
-import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
+import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { Poppins } from "next/font/google";
+import { Noto_Sans_JP } from "next/font/google";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,6 +12,13 @@ export const metadata: Metadata = {
 
 const poppins = Poppins({
   variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  fallback: ["Hiragino Sans", "ui-sans-serif", "system-ui"],
+});
+
+const notoSansJP = Noto_Sans_JP({
+  variable: "--font-noto-sans-jp",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
@@ -27,7 +35,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   }
 
   return (
-    <html lang={locale} className={`${poppins.className} antialiased`}>
+    <html lang={locale} className={` antialiased`}>
       <body>
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
