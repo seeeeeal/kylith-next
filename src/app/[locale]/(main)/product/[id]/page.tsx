@@ -22,6 +22,8 @@ import Review from "./components/Review";
 // mock data
 import products from "@/lib/products";
 import { reviews } from "@/lib/reviews";
+import Selector from "./components/Selector";
+import switches from "@/lib/switches";
 
 type Product = (typeof products)[number];
 
@@ -39,23 +41,29 @@ function Product() {
   const [isFavorite, setIsFavorite] = useState(false);
   const [quantity, setQuantity] = useState(1);
 
-  const filteredSwitches = product?.switches ?? [];
+  const filteredSwitches = switches.filter((sw) => {
+    if (product?.switches) {
+      return product.switches.includes(sw.type);
+    }
+    return [];
+  });
 
   // Use the first switch as the default selected switch
   const [selectedSwitch, setSelectedSwitch] = useState(
-    filteredSwitches[0] ?? ""
+    filteredSwitches[0]?.type
   );
 
   // Add state for color and layout selection
   const [selectedColor, setSelectedColor] = useState(
-    product?.colors?.[0]?.name ?? ""
-  );
-  const [selectedLayout, setSelectedLayout] = useState(
-    t("product.englishLayout")
+    product?.colors[0].name ?? "黒"
   );
   const currentColorImage = product?.colors.find(
     (color) => color.name === selectedColor
   )?.image;
+
+  const [selectedLayout, setSelectedLayout] = useState(
+    t("product.englishLayout")
+  );
 
   if (!product) {
     return (
@@ -105,18 +113,18 @@ function Product() {
 
           {/* Switch selector */}
           <div>
-            <label className="block text-sm mb-2">{t("product.switch")}</label>
-            <select
-              className="w-full bg-kui-base border border-kui-border rounded p-2 text-sm"
-              value={selectedSwitch}
-              onChange={(e) => setSelectedSwitch(e.target.value)}
-            >
-              {filteredSwitches.map((sw) => (
-                <option key={sw} value={sw}>
-                  {sw}
-                </option>
-              ))}
-            </select>
+            <Selector
+              title={t("product.switch")}
+              selected={selectedSwitch}
+              onSelect={(v) => setSelectedSwitch(v)}
+              items={filteredSwitches.map((sw) => ({
+                value: sw.type,
+                label: sw.name,
+                image: `/${sw.image}`,
+                desc: sw.desc,
+                tags: sw.tags,
+              }))}
+            />
 
             <button className="mt-2 text-xs text-kui-primary flex items-center">
               <span>{t("product.switchSupport")}</span>
@@ -127,39 +135,35 @@ function Product() {
           <hr className="border-kui-border" />
 
           {/* Color selector */}
-          <div>
-            <label className="block text-sm mb-2">{t("product.color")}</label>
-            <select
-              className="w-full bg-kui-base border border-kui-border rounded p-2 text-sm"
-              value={selectedColor}
-              onChange={(e) => setSelectedColor(e.target.value)}
-            >
-              {product.colors.map((color) => (
-                <option key={color.name} value={color.name}>
-                  {color.name}
-                </option>
-              ))}
-            </select>
-          </div>
+          <Selector
+            title={t("product.color")}
+            selected={selectedColor}
+            onSelect={(v) => setSelectedColor(v)}
+            items={product.colors.map((color) => ({
+              value: color.name,
+              label: color.name,
+              image: color.image,
+            }))}
+          />
 
           <hr className="border-gray-200" />
 
           {/* Layout selector */}
-          <div>
-            <label className="block text-sm mb-2">{t("product.layout")}</label>
-            <select
-              className="w-full bg-kui-base border border-kui-border rounded p-2 text-sm"
-              value={selectedLayout}
-              onChange={(e) => setSelectedLayout(e.target.value)}
-            >
-              <option value={t("product.englishLayout")}>
-                {t("product.englishLayout")}
-              </option>
-              <option value={t("product.japaneseLayout")}>
-                {t("product.japaneseLayout")}
-              </option>
-            </select>
-          </div>
+          <Selector
+            title={t("product.layout")}
+            selected={selectedLayout}
+            onSelect={(v) => setSelectedLayout(v)}
+            items={[
+              {
+                value: t("product.englishLayout"),
+                label: t("product.englishLayout"),
+              },
+              {
+                value: t("product.japaneseLayout"),
+                label: t("product.japaneseLayout"),
+              },
+            ]}
+          />
 
           <div>
             <div className="mb-4">
