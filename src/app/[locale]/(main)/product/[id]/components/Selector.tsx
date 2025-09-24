@@ -66,8 +66,9 @@ export default function Selector({
 
           {/* Render tags if available(mainly for switch options). */}
           <div className="mt-2 flex gap-1">
-            {selectedItem?.tags?.map((tag) => (
+            {selectedItem?.tags?.map((tag, index) => (
               <KuiTag
+                key={index}
                 color="default"
                 size="xsmall"
                 variant="soft"

@@ -24,6 +24,8 @@ import products from "@/lib/products";
 import { reviews } from "@/lib/reviews";
 import Selector from "./components/Selector";
 import switches from "@/lib/switches";
+import { Button } from "@/components/ui/button";
+import clsx from "clsx";
 
 type Product = (typeof products)[number];
 
@@ -88,14 +90,23 @@ function Product() {
       <div className="mt-4 flex items-center justify-between">
         <h2 className="text-xl sm:text-2xl font-bold">{product.fullName}</h2>
 
-        <KuiIconButton
+        <Button
           onClick={() => setIsFavorite(!isFavorite)}
-          aria-label="お気に入りに追加"
-          variant="filled"
-          color={isFavorite ? "error" : "default"}
+          size="icon"
+          shape="round"
+          variant="secondary"
+          className={
+            isFavorite
+              ? "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60"
+              : ""
+          }
         >
-          {isFavorite ? <FiHeart fill="currentColor" /> : <FiHeart />}
-        </KuiIconButton>
+          {isFavorite ? (
+            <FiHeart fill="currentColor" className="size-3" />
+          ) : (
+            <FiHeart className="size-3" />
+          )}
+        </Button>
       </div>
 
       <div className="mt-4 flex flex-col lg:flex-row space-y-6 lg:space-y-0 lg:space-x-8">
@@ -109,7 +120,7 @@ function Product() {
 
         <div className="flex flex-col space-y-4 w-full lg:basis-1/2">
           <PriceTag amount={product.price} size="large" />
-          <hr className="border-kui-border" />
+          <hr className="border-border" />
 
           {/* Switch selector */}
           <div>
@@ -132,7 +143,7 @@ function Product() {
             </button>
           </div>
 
-          <hr className="border-kui-border" />
+          <hr className="border-border" />
 
           {/* Color selector */}
           <Selector
@@ -146,7 +157,7 @@ function Product() {
             }))}
           />
 
-          <hr className="border-gray-200" />
+          <hr className="border-border" />
 
           {/* Layout selector */}
           <Selector
@@ -200,24 +211,22 @@ function Product() {
                 disabled={product.stock === 0}
               />
 
-              <KuiButton
-                variant="solid"
-                color="default"
-                size="large"
-                shape="round"
+              <Button
                 disabled={product.stock === 0}
+                shape="round"
+                size="lg"
                 onClick={() => {
                   // TODO: Integrate CartContext when available
                 }}
                 className="flex-1"
               >
-                <FiShoppingCart className="w-4 h-4 mr-2" />
+                <FiShoppingCart />
                 {t("cart.addToCart")}
-              </KuiButton>
+              </Button>
             </div>
           </div>
 
-          <hr className="border-kui-border" />
+          <hr className="border-border" />
 
           <div className="flex flex-col gap-2">
             <p className="text-xs leading-relaxed text-kui-secondary">
@@ -234,7 +243,7 @@ function Product() {
         </div>
       </div>
 
-      <hr className="border-kui-border my-8" />
+      <hr className="border-border my-8" />
 
       <Review reviews={reviews} />
     </div>

@@ -7,6 +7,7 @@ import {
 } from "react-icons/fi";
 import { useTranslations } from "next-intl";
 import clsx from "clsx";
+import { Button } from "@/components/ui/button";
 
 const NAV_ITEMS = [
   { key: "keyboards", path: "/keyboards", hasDropdown: true },
@@ -52,11 +53,17 @@ export default function Nav({ className }: Props) {
 
         <div className="flex items-center gap-4 text-xs">
           <div className=" bg-kui-base border border-2 border-transparent hover:border-kui-primary transition-colors flex justify-end items-center rounded h-6 px-2 w-20 sm:w-36 cursor-pointer">
-            <FiSearch className="text-xs" />
+            <FiSearch />
             {/* TODO: Search modal */}
           </div>
-          <FiUser />
-          <FiShoppingCart />
+          <div className="flex gap-2">
+            <Button variant="ghost" size="icon" shape="round">
+              <FiUser />
+            </Button>
+            <Button variant="ghost" size="icon" shape="round">
+              <FiShoppingCart />
+            </Button>
+          </div>
         </div>
       </div>
     </header>

@@ -1,5 +1,7 @@
-import { redirect } from "next/navigation";
+import { redirect } from "@/i18n/navigation";
+import { getLocale } from "next-intl/server";
 
-export default function RootPage() {
-  redirect("/ja");
+export default async function RootPage() {
+  const locale = await getLocale();
+  redirect({ href: "/", locale: locale });
 }

@@ -1,6 +1,7 @@
 import { FiUser } from "react-icons/fi";
 import ReactMarkdown from "react-markdown";
 import { Fragment } from "react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 interface Review {
   id: number;
@@ -67,12 +68,13 @@ function Review({ reviews, className = "" }: ReviewProps) {
         {/* Reviews List */}
         <div className="lg:col-span-3 space-y-2">
           {reviews.map((review) => (
-            <div key={review.id} className="bg-kui-base rounded-lg p-4">
+            <div key={review.id} className="bg-secondary rounded-lg p-4">
               <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 bg-kui-default/50 rounded-full flex items-center justify-center">
-                    <FiUser className="text-kui-base" />
-                  </div>
+                  <Avatar>
+                    <AvatarImage src="" />
+                    <AvatarFallback />
+                  </Avatar>
                   <span className="text-sm font-semibold text-kui-default">
                     {review.author}
                   </span>
