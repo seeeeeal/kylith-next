@@ -77,7 +77,7 @@ export default function ImageGallery({
               <Image
                 src={image}
                 alt={productName}
-                className="rounded"
+                className="rounded dark:brightness-80"
                 width={900}
                 height={900}
               />

@@ -10,9 +10,9 @@ import clsx from "clsx";
 import { Button } from "@/components/ui/button";
 
 const NAV_ITEMS = [
-  { key: "keyboards", path: "/keyboards", hasDropdown: true },
-  { key: "accessories", path: "/accessories", hasDropdown: true },
-  { key: "support", path: "/support", hasDropdown: false },
+  { key: "keyboards", href: "/products/keyboards", hasDropdown: true },
+  { key: "accessories", href: "/products/accessories", hasDropdown: true },
+  { key: "support", href: "/support", hasDropdown: false },
 ];
 
 type Props = {
@@ -31,10 +31,10 @@ export default function Nav({ className }: Props) {
           </Link>
 
           <nav className="flex items-center gap-6 text-xs">
-            {NAV_ITEMS.map(({ key, path, hasDropdown }) => (
+            {NAV_ITEMS.map(({ key, href, hasDropdown }) => (
               <Link
                 key={key}
-                href={path}
+                href={href}
                 className="inline-flex items-center gap-1 transition-colors font-semibold"
               >
                 {t(key)}
